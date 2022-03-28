@@ -1,4 +1,4 @@
-//Daily schedule 
+//Daily schedule variables
 var dailySchedule = [
   {
       id: "0",
@@ -74,7 +74,6 @@ function displaySaved() {
   })
 }
 
-
 dailySchedule.forEach(function(index) {
   //creates row elements
   var rowEl = $("<div>").addClass("row");
@@ -94,9 +93,9 @@ dailySchedule.forEach(function(index) {
   } else {
       taskDetailEl.addClass("future");   
   }
-  //creates save button element
+  //creates save button element 
   var saveButtonEl = $("<button>").addClass("saveBtn col-1 far fa-save fa-lg border-0");
-  //Adds all element within the row elemnt
+  //Adds all element within the row elemnt 
   rowEl.append(
     hourEl,
     taskEl,
@@ -104,7 +103,7 @@ dailySchedule.forEach(function(index) {
   );
 })
 
-// Saves data to be used in localStorage
+// Saves data in localStorage 
 $(".saveBtn").on("click", function() {
   var i = $(this).siblings(".description").children().attr("id");
   dailySchedule[i].description = $(this).siblings(".description").children().val();
